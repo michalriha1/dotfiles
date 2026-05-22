@@ -23,7 +23,7 @@ ensure_homebrew() {
   else
     ensure_sudo_for_homebrew_install
     log "Installing Homebrew"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
   if [[ -x "/opt/homebrew/bin/brew" ]]; then
