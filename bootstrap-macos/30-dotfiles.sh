@@ -29,6 +29,13 @@ run_dotfiles() {
     return
   fi
 
+  # Handle common conflict: existing regular ~/.zshrc file
+  if [[ -e "$HOME/.zshrc" && ! -L "$HOME/.zshrc" ]]; then
+    local backup_path="$HOME/.zshrc.bootstrap-backup.$(date +%Y%m%d%H%M%S)"
+    warn "Found existing non-symlink ~/.zshrc, backing up to $backup_path"
+    mv "$HOME/.zshrc" "$backup_path"
+  fi
+
   log "Stowing selected dotfiles packages from $DOTFILES_STOW_DIR"
   (
     cd "$DOTFILES_STOW_DIR"

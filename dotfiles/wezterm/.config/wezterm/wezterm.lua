@@ -55,7 +55,7 @@ config.inactive_pane_hsb = {
 	brightness = 0.8,
 }
 
-config.equalize_panes = true -- custom command, remove in official wezterm
+-- config.equalize_panes = true -- custom command, remove in official wezterm
 
 config.enable_kitty_keyboard = true
 config.window_decorations = "RESIZE"

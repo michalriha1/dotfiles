@@ -46,7 +46,18 @@ print_next_steps() {
     warn "SSH public key not found at $public_key_path"
   fi
 
-  printf "2. Authenticate pi\n"
+  printf "2. Switch dotfiles repo remote to SSH:\n"
+  printf "   ```bash\n"
+  printf "   cd ~/workspace/personal/dotfiles\n"
+  printf "   git remote set-url origin git@github.com:michalriha1/dotfiles.git\n"
+  printf "   git remote -v\n"
+  printf "   ```\n"
+  printf "3. Setup:\n"
+  printf "   - better display\n"
+  printf "   - ice\n"
+  printf "   - start Obsidian\n"
+  printf "Final step: Reboot your Mac\n"
+
 }
 
 ensure_dotfiles_repo() {
